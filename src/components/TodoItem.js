@@ -6,12 +6,12 @@ class TodoItem extends Component {
     const { text, checked, id, onToggle, onRemove} = this.props;
 
     return (
-      <div className="to-do-item" onClick={() => onToggle(id)}>
+      <div className="todo-item" onClick={() => onToggle(id)}>
         <div className="remove" onClick={(e) => {
           e.stopPropagation(); // onToggle이 실행되지 않도록 하는 코드 , 이벤트의 확산을 멈춰주는 코드이다.
           onRemove(id)}
         }>&times;</div>
-        <div className={`to-do-text ${checked && 'checked'}`}>
+        <div className={`todo-text ${checked && 'checked'}`}>
           <div> { text } </div>
         </div>
         {
